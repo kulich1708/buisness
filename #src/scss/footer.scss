@@ -1,0 +1,57 @@
+.footer {
+	padding-bottom: 50px;
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width:$md3 + px){
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__column {
+		font-family: "Montserrat";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 40px;
+		text-align: right;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		column-gap: 30px;
+		@media (max-width:$md3 + px){
+			text-align: center;
+		}
+		span {
+			display: block;
+			cursor: pointer;
+			position: relative;
+			text-align: center;
+			&:after {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 1px;
+				left: 50%;
+				bottom: -10px;
+				transition: 0.2s;
+				background: #007397;
+			}
+			&:hover {
+				color: #007397;
+				transition: 0.2s;
+				&:after {
+					width: 100%;
+					left: 0;
+					transition: 0.2s;
+				}
+			}
+			&:not(:hover) {
+				transition: 0.2s;
+			}
+		}
+	}
+}
